@@ -10,7 +10,7 @@ React，⽤于构建⽤户界⾯的 JavaScript 库，只提供了 UI 层⾯的�
 
 react 类组件使⽤⼀个名为 render() 的⽅法或者函数组件 return ，接收输⼊的数据并返回需要展示的内容
 
-```react
+```javascript
 class HelloMessage extends React.Component {
  render() {
  return <div>Hello {this.props.name}</div>;
@@ -26,7 +26,7 @@ ReactDOM.render(
 
 函数组件，顾名思义，就是通过函数编写的形式去实现⼀个 React 组件，是 React 中定义组件最简单的⽅式
 
-```react
+```javascript
 const Header = () => {
  return (
  <Jumbotron style={{ backgroundColor: "orange" }}>
@@ -40,7 +40,7 @@ const Header = () => {
 
 如果想要管理 state 状态，可以使⽤ useState ，如下：
 
-```react
+```javascript
 const FunctionalComponent = () => {
  const [count, setCount] = React.useState(0);
  return (
@@ -64,7 +64,7 @@ const FunctionalComponent = () => {
 
 但是函数组件使⽤ useEffect 也能够完成替代⽣命周期的作⽤，这⾥给出⼀个简单的例⼦：
 
-```react
+```javascript
 const FunctionalComponent = () => {
  useEffect(() => {
  console.log("Hello");
@@ -87,7 +87,7 @@ const FunctionalComponent = () => {
 
 对象，如下
 
-```react
+```javascript
 class Dashboard extends React.Component {
  constructor(props) {
  super(props);
@@ -110,7 +110,7 @@ class Dashboard extends React.Component {
 
 当需要修改⾥⾯的值的状态需要通过调⽤ setState 来改变，从⽽达到更新组件内部数据的作⽤，并且重新调⽤组件 render ⽅法，如下⾯的例⼦：
 
-```react
+```javascript
 class Button extends React.Component {
  constructor() {
  super();
@@ -143,7 +143,7 @@ React 的核⼼思想就是组件化思想，⻚⾯会被切分成⼀些独⽴�
 
 react 具有单向数据流的特性，所以他的主要作⽤是从⽗组件向⼦组件中传递数据
 
-```react
+```javascript
 class Welcome extends React.Component {
  render() {
  return <h1>Hello {this.props.name}</h1>;
@@ -164,7 +164,7 @@ React 基于浏览器的事件机制⾃身实现了⼀套事件机制，包括�
 
 #### 执⾏顺序
 
-```react
+```javascript
 import React from 'react';
 class App extends React.Component{
  constructor(props) {
@@ -307,7 +307,7 @@ react16.4 之后的⽣命周期，可以分成三个阶段：
 
 件传递过来的参数
 
-```react
+```javascript
 function EmailInput(props) {
  return (
  <label>
@@ -328,7 +328,7 @@ const element = <EmailInput email="123124132@163.com" />;
 
 ⽗组件对应代码如下：
 
-```react
+```javascript
 class Parents extends Component {
  constructor() {
  super();
@@ -355,7 +355,7 @@ class Parents extends Component {
 
 ⼦组件对应代码如下：
 
-```react
+```javascript
 class Child extends Component {
  clickGoods(e) {
  // 在此函数中传⼊值
@@ -378,7 +378,7 @@ class Child extends Component {
 
 如果是兄弟组件之间的传递，则⽗组件作为中间层来实现数据的互通，通过使⽤⽗组件传递
 
-```react
+```javascript
 class Parent extends React.Component {
  constructor(props) {
  super(props)
@@ -412,7 +412,7 @@ class Parent extends React.Component {
 
 通过使⽤ React.createContext 创建⼀个 context
 
-```react
+```javascript
 const PriceContext = React.createContext('price')
 ```
 
@@ -420,14 +420,14 @@ context 创建成功后，其下存在 Provider 组件⽤于创建数据源， C
 
 Provider 组件通过 value 属性⽤于给后代组件传递数据：
 
-```react
+```javascript
 <PriceContext.Provider value={100}>
 </PriceContext.Provider>
 ```
 
 如果想要获取 Provider 传递的数据，可以通过 Consumer 组件或者或者使⽤ contextType 属性接收，对应分别如下
 
-```react
+```javascript
 class MyClass extends React.Component {
  static contextType = PriceContext;
  render() {
@@ -439,7 +439,7 @@ class MyClass extends React.Component {
 
 Consumer 组件：
 
-```react
+```javascript
 <PriceContext.Consumer>
  { /*这⾥是⼀个函数*/ }
  {
@@ -476,7 +476,7 @@ BrowserRouter
 
 这两个组件的使⽤都⼗分的简单，作为最顶层组件包裹其他组件，如下所示
 
-```react
+```javascript
 // 1.import { BrowserRouter as Router } from "react-router-dom";
 // 2.import { HashRouter as Router } from "react-router-dom";
 import React from 'react';
